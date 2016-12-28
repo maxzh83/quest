@@ -11,10 +11,12 @@
   <link rel="stylesheet" type="text/css" href="dist/angular-wizard.css">
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
 
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
 
   <script type="text/javascript" src="dist/angular-wizard.js"></script>
+
 
   <script type="text/javascript" src="javascripts/main.js"></script>
 
@@ -22,7 +24,7 @@
 
 
 
-  <title>Angular-wizard</title>
+  <title>Quest</title>
 </head>
 
 <body>
@@ -32,7 +34,7 @@
   <header class="inner">
     <!--<a id="forkme_banner" href="https://github.com/mgonto/angular-wizard">View on GitHub</a>-->
 
-    <h1 id="project_title">Angular-Wizard</h1>
+    <h1 id="project_title">Квест ""</h1>
     <!--<h2 id="project_tagline">Easy to use Wizard library for AngularJS</h2>-->
 
     <!--<section id="downloads">-->
@@ -43,51 +45,124 @@
 </div>
 
 <!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-  <section id="main_content" class="inner main-inner" ng-app="wizard-sample" ng-controller="WizardCtrl">
+<div id="main_content_wrap" class="outer" ng-app="wizard-sample" ng-controller="WizardCtrl">
+  <section id="main_content" class="inner main-inner" >
     <wizard on-finish="finished()">
       <wz-step title="(1)">
-        <p>Hey guys, welcome to the wizard :)</p>
-        <span><input type="text" ng-model="pass.pass1"> <input type="submit" ng-click="pass1()" value="Проверить"/></span>
-        <img src="images/q1.jpg">
+        <div class="quest-wrap">
+        
+        <div class="quest">
+          <p>Нужно по картинке найти код и ввести его. Если все правильно, проходишь дальше и получаешь подсказку для поиска драгоценного подарка )</p>
+          <span><input type="text" ng-model="pass.pass1"> <input type="submit" ng-click="pass1()" value="Проверить"/></span>
+          <img src="images/q1.jpg">
+         </div>
+        </div>
       </wz-step>
+
+
       <wz-step title="(2)">
-        <p>You're now in the second step of this wizard.</p>
-        <span><input type="text" ng-model="pass.pass2"> <input type="submit" ng-click="pass2()" value="Проверить"/></span>
-        <img src="images/q2.jpg">
+        <div class="quest-wrap">
+        
+        <div class="quest">
+          <p>Отлично! Справа подсказка, внизу новое задание. Введи код используя картинку и получи подсказку</p>
+          <span><input type="text" ng-model="pass.pass2"> <input type="submit" ng-click="pass2()" value="Проверить"/></span>
+          <img src="images/q-wash.jpg">
+         </div>
+
+         <div class="achive" ng-show="resolved.q1">
+             <p>Подсказка за пройденный квест</p>
+             <img class="img-circle" src="images/q-box-extra.jpg" width="250" height="250">
+          </div>
+        </div>
       </wz-step>
+
+
+
       <wz-step title="(3)">
-        <p>You're now in the second step of this wizard.</p>
-        <span><input type="text" ng-model="pass.pass3"> <input type="submit" ng-click="pass3()" value="Проверить"/></span>
-        <img src="images/q3.png">
+        <div class="quest-wrap">
+
+          <div class="quest">
+            <p>Введи код используя картинку и получи подсказку</p>
+            <span><input type="text" ng-model="pass.pass3"> <input type="submit" ng-click="pass3()" value="Проверить"/></span>
+            <img src="images/q3.png">
+          </div>
+
+          <div class="achive" ng-show="resolved.q2">
+            <p>Подсказка за пройденный квест</p>
+            <img class="img-circle" src="images/q-palm-extra.jpg" width="250" height="250">
+          </div>
+        </div>
       </wz-step>
+
+      
       <wz-step title="(4)">
-        <h1>Even More steps</h1>
-        <p>I can't deal with so many steps. ARGH</p>
-        <input type="button" wz-next value="Click here to continue" />
+        <div class="quest-wrap">
+
+          <div class="quest">
+            <p>Введи код используя картинку и получи подсказку</p>
+            <span><input type="text" ng-model="pass.pass4"> <input type="submit" ng-click="pass4()" value="Проверить"/></span>
+            <img src="images/q-ice.jpg">
+          </div>
+
+          <div class="achive" ng-show="resolved.q3">
+            <p>Подсказка за пройденный квест</p>
+            <img class="img-circle" src="images/q-tumb-extra.jpg" width="250" height="250">
+          </div>
+        </div>
       </wz-step>
-      <wz-step title="Sup?">
-        <h1>Sup?</h1>
-        <p>I don't even know what to write!</p>
-        <input type="button" wz-next value="Click here to continue" />
+
+      <wz-step title="(5)">
+        <div class="quest-wrap">
+
+          <div class="quest">
+            <p>Введи код используя картинку и получи подсказку</p>
+            <span><input type="text" ng-model="pass.pass5"> <input type="submit" ng-click="pass5()" value="Проверить"/></span>
+            <img src="images/q-candle.jpg">
+          </div>
+
+          <div class="achive" ng-show="resolved.q4">
+            <p>Подсказка за пройденный квест</p>
+            <img class="img-circle" src="images/q-glass-extra.jpg" width="250" height="250">
+          </div>
+        </div>
       </wz-step>
-      <wz-step title="Finish him">
-        <h1>Finish him</h1>
-        <p>Finally this ends!</p>
-        <input type="button" wz-next value="Click here to end" />
-        <input type="button" ng-click="goBack()" value="Click here to start again" />
+
+      <wz-step title="(6)">
+        <div class="quest-wrap">
+          <div class="quest">
+            <p>Последнее задание! Возможно, пригодятся ответы на предыдущие задания. Введи код используя картинку и получи подсказку</p>
+            <span><input type="text" ng-model="pass.pass6"> <input type="submit" ng-click="pass6()" value="Проверить"/></span>
+            <img src="images/q-book.jpg">
+          </div>
+
+          <div class="achive" ng-show="resolved.q5">
+            <p>Подсказка за пройденный квест</p>
+            <img class="img-circle" src="images/q-short-extra.jpg" width="250" height="250">
+          </div>
+        </div>
+      </wz-step>
+
+      <wz-step title="(7)">
+        <div class="quest-wrap">
+          <div class="quest">
+            <p>Поздравляю! Все задания выполнены, теперь собери все подсказки вместе и прояви смекалку! :)</p>
+          </div>
+
+        </div>
       </wz-step>
     </wizard>
   </section>
 </div>
 
 <!-- FOOTER  -->
-<div id="footer_wrap" class="outer">
+<!-- <div id="footer_wrap" class="outer"> -->
   <!--<footer class="inner">-->
     <!--<p class="copyright">Angular-wizard maintained by <a href="https://github.com/mgonto">mgonto</a></p>-->
     <!--<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>-->
   <!--</footer>-->
-</div>
+  
+
+<!-- </div> -->
 
 
 

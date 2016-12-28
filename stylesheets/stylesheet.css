@@ -58,7 +58,8 @@ Theme Styles
 body {
     box-sizing: border-box;
     color:#373737;
-    background: #212121;
+    /*background: #212121;*/
+    background: url('../images/back.jpg');
     font-size: 16px;
     font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -271,7 +272,7 @@ Full-Width Styles
 
 .inner {
     position: relative;
-    max-width: 640px;
+    max-width: 1840px;
     padding: 20px 10px;
     margin: 0 auto;
 }
@@ -310,6 +311,7 @@ Full-Width Styles
     font-size: 42px;
     font-weight: 700;
     text-shadow: #111 0px 0px 10px;
+    text-align: center;
 }
 
 #project_tagline {
@@ -361,6 +363,7 @@ Full-Width Styles
 
 #main_content_wrap {
     background: #f2f2f2;
+    opacity: 0.8;
     border-top: 1px solid #111;
     border-bottom: 1px solid #111;
 }
@@ -427,4 +430,26 @@ Small Device Styles
         font-size: 11px;
     }
 
+}
+
+
+.img-circle {
+    border-radius: 50%;
+    border: 1px solid #cbcbcb;
+}
+
+.achive{
+    display: inline;
+    float: left;
+    max-width: 300px;
+}
+
+.quest-wrap{
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.quest{
+    max-width: 600px;
+    float: left;
 }
